@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <style>
+      .button {
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+         border-radius: 12px;
+      }
+
+      .button1 {background-color: #04AA6D;} /* Green */
+      .button2 {background-color: #008CBA;} /* Blue */
+    </style>
+  </head>
+  <body>
+    <a
+      class="transition-all duration-200 ease-in-out bg-bottom bg-no-repeat bg-no-underline-size hover:bg-underline-size bg-underline text-hex-ff9500 dark:text-hex-ff9f0a"
+      after="content-↗"
+      href='javascript:(function()%7B   function copyToClipboard(text) %7B     var idevdi_el %3D document.createElement("input")%3B     idevdi_el.type %3D "text"%3B     idevdi_el.value %3D text%3B     idevdi_el.style.opacity %3D &apos;0&apos;%3B     document.body.appendChild(idevdi_el)%3B     idevdi_el.select()%3B     document.execCommand("copy")%3B     document.body.removeChild(idevdi_el)%3B   %7D    function run() %7B     var url %3D window.location.href.split("%3F")%5B0%5D%3B     var filename %3D url.split("%2F")%5Burl.split("%2F").length - 1%5D%3B     var id %3D filename.split("_")%5B1%5D%3B          if (!id) %7B       alert("You can only copy SVG icon while viewing an icon.")%3B       return 0%3B     %7D          var loggedin %3D document.getElementById("gr_connected")%3B     if (!loggedin) %7B       alert("Please LOGIN before clicking on me.")%3B       return%3B     %7D          fetch("https%3A%2F%2Fwww.flaticon.com%2Feditor%2Ficon%2Fsvg%2F" %2B id %2B "%3Ftype%3Dstandard")       .then(function(response) %7B         return response.json()%3B       %7D)       .then(function(data) %7B         fetch(data.url)           .then(function(response2) %7B             return response2.text()%3B           %7D)           .then(function(html) %7B             copyToClipboard(html)%3B             alert("Copied SVG")%3B           %7D)           .catch(function(e) %7B             alert("Something went wrong")%3B           %7D)%3B       %7D)       .catch(function(error) %7B         alert("Something went wrong")%3B       %7D)%3B   %7D      run()%3B %7D)()'
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <button class="button button1">Copy Icon</button>
+    </a>
+    <a
+      class="transition-all duration-200 ease-in-out bg-bottom bg-no-repeat bg-no-underline-size hover:bg-underline-size bg-underline text-hex-ff9500 dark:text-hex-ff9f0a"
+      after="content-↗"
+      href='javascript:(function() {   var url = window.location.href.split("%3F")[0];   var filename = url.split("%2F")[url.split("%2F").length - 1];   var id = filename.split("")[1];   if (!id) {     alert("You can only download SVG icon while viewing an icon.");     return;   }   var onlyName = filename.split("")[0];    function downloadURI(uri, name) {     var link = document.createElement("a");     link.setAttribute("download", name);     link.href = uri;     document.body.appendChild(link);     link.dispatchEvent(new MouseEvent(&apos;click&apos;));     link.remove();   }    var loggedin = document.getElementById("gr_connected");   if (!loggedin) {     alert("Please LOGIN before clicking on me.");     return;   }    fetch("https%3A%2F%2Fwww.flaticon.com%2Feditor%2Ficon%2Fsvg%2F" + id + "%3Ftype%3Dstandard")     .then(function(response) {       return response.json();     })     .then((data) => {       downloadURI(data.url, onlyName + ".svg");     })     .catch((error) => {       alert("Something went wrong");     }); })();'
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <button class="button button1">Tải Icon</button>
+    </a>
+  </body>
+</html>
